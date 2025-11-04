@@ -155,7 +155,7 @@ type AgentCard struct {
 
 func main() {
 	err := godotenv.Load(".env")
-	if err != nil && gin.Mode() != gin.ReleaseMode {
+	if err != nil && (gin.Mode() == gin.DebugMode || gin.Mode() == gin.TestMode) {
 		log.Fatalf("Error loading .env file: %v", err)
 	}
 
