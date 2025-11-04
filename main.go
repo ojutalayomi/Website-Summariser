@@ -156,7 +156,7 @@ type AgentCard struct {
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil && (gin.Mode() == gin.DebugMode || gin.Mode() == gin.TestMode) {
-		log.Fatalf("Error loading .env file: %v", err)
+		fmt.Printf("Error loading .env file: %v", err)
 	}
 
 	apiKey = os.Getenv("GEMINI_API_KEY")
